@@ -6,8 +6,4 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class RequireComponentTest : MonoBehaviour
 {
-    private void Awake()
-    {
-
-    }
 }

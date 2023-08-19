@@ -10,9 +10,4 @@ public class AddComponentTest : MonoBehaviour
         gameObject.AddComponent<Rigidbody> ();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
