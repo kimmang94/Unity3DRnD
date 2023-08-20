@@ -8,12 +8,21 @@ public class DiceScript : MonoBehaviour {
 	public static Vector3 diceVelocity;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 		rb = GetComponent<Rigidbody> ();
 	}
 	
-	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
+		Dice();
+	}
+
+	/// <summary>
+	/// 주사위를 굴려 x,y,z 의 값을 0 ~499 까지 position을 랜덤으로 정하고 addForce를 통해 위로 튕기는 기능
+	/// </summary>
+	private void Dice()
+	{
 		diceVelocity = rb.velocity;
 
 		if (Input.GetKeyDown (KeyCode.Space)) {

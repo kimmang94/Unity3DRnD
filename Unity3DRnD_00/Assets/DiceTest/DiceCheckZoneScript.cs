@@ -11,6 +11,10 @@ public class DiceCheckZoneScript : MonoBehaviour {
 		diceVelocity = DiceScript.diceVelocity;
 	}
 
+	/// <summary>
+	/// 주사위 반대 숫자를 Trigger체크해서 Text에 표현하기 위한 기능
+	/// </summary>
+	/// <param name="col"></param>
 	void OnTriggerStay(Collider col)
 	{
 		if (diceVelocity.x == 0f && diceVelocity.y == 0f && diceVelocity.z == 0f)
