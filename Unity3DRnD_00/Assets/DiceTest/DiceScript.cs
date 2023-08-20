@@ -7,6 +7,8 @@ public class DiceScript : MonoBehaviour {
 	static Rigidbody rb;
 	public static Vector3 diceVelocity;
 
+	// Torqu 힘과 Force 에 가해지는 힘
+	private int power = 500;
 	// Use this for initialization
 	void Start () 
 	{
@@ -27,12 +29,13 @@ public class DiceScript : MonoBehaviour {
 
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			DiceNumberTextScript.diceNumber = 0;
-			float dirX = Random.Range (0, 500);
-			float dirY = Random.Range (0, 500);
-			float dirZ = Random.Range (0, 500);
+			float dirX = Random.Range (0, power);
+			float dirY = Random.Range (0, power);
+			float dirZ = Random.Range (0, power);
 			transform.position = new Vector3 (0, 2, 0);
 			transform.rotation = Quaternion.identity;
-			rb.AddForce (transform.up * 500);
+			rb.AddForce (transform.up * power);
+			// 회전에 힘을 주는 기능
 			rb.AddTorque (dirX, dirY, dirZ);
 		}
 	}
